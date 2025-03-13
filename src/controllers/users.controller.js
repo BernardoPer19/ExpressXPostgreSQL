@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
 export const getUserByID = async (req, res) => {
   const { id } = req.params;
   try {
-    const { rows } = await pool.query(`SELECT * FROM users WHERE id = $1`, [
+    const { rows } = await pool.query(`SELECT * FROM users WHERE id = '$1'`, [
       id,
     ]);
 
@@ -38,7 +38,6 @@ export const addUser = async (req, res) => {
         [name, email]
       );
   
-      // Devolver el primer usuario insertado
       res.status(201).json(result.rows[0]);
     } catch (error) {
       console.error(error);
