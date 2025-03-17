@@ -1,4 +1,6 @@
 .env
 node_modules
 src/config.js
-config.jsgit commit -m "Eliminando config.js del repositorio"
+
+ 
+config.js  
